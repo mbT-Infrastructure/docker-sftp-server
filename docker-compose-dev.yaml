@@ -1,0 +1,11 @@
+version: "3.8"
+
+services:
+
+    sftp-server:
+        container_name: sftp-server
+        build: .
+        environment:
+            - PUBLIC_KEYS=
+        ports:
+            - "22:22"

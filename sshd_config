@@ -1,0 +1,15 @@
+# Authentication
+AllowUsers sftp
+ChallengeResponseAuthentication no
+PermitRootLogin no
+PasswordAuthentication no
+UsePAM no
+
+# Connection
+Subsystem sftp internal-sftp
+ForceCommand internal-sftp
+Port 22
+
+# User configuration
+Match User sftp
+    AuthorizedKeysFile /app/sftp/authorized_keys
