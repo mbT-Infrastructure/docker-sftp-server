@@ -7,7 +7,7 @@ This Docker image contains a simple ssh server which only allows sftp for the us
 
 - `PUBLIC_KEYS`
     - Public keys with access to the ssh server. For example `ssh-rsa AAAAB3Nz... user@example.madebytimo.de`.
-`
+
 
 ## Volumes
 
@@ -16,6 +16,11 @@ This Docker image contains a simple ssh server which only allows sftp for the us
 
 
 ## Development
+
+To build and run for development run:
+```bash
+docker compose --file docker-compose-dev.yaml up --build
+```
 
 To build the image locally run:
 ```bash
