@@ -8,6 +8,8 @@ COPY sshd_config /etc/ssh/
 
 RUN mkdir --parents /media/sftp
 
+ENV PUBLIC_KEYS=""
+
 COPY entrypoint.sh /entrypoint.sh
 
 ENTRYPOINT [ "/entrypoint.sh" ]
