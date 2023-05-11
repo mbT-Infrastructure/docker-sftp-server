@@ -6,6 +6,11 @@ services:
         container_name: sftp-server
         build: .
         environment:
-            - PUBLIC_KEYS=
+            - AUTHORIZED_PUBLIC_KEYS=
+            - |
+                HOST_KEY=-----BEGIN OPENSSH PRIVATE KEY-----
+                ...
+                -----END OPENSSH PRIVATE KEY-----
+
         ports:
-            - "22:22"
+            - "8022:22"
