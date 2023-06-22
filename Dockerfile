@@ -6,7 +6,8 @@ RUN install-autonomous.sh install ScriptsAdvanced && \
     rm -rf /etc/ssh/*
 RUN mkdir -p --mode 0755 /var/run/sshd
 
-RUN adduser sftp --disabled-password --gecos "" --home /media/sftp
+RUN adduser sftp --disabled-password --gecos "" --home /media/sftp && \
+    usermod --password '*' sftp
 COPY sshd_config /etc/ssh/
 
 RUN mkdir --parents /media/sftp
@@ -17,5 +18,4 @@ ENV HOST_KEY=""
 COPY entrypoint.sh /entrypoint.sh
 
 ENTRYPOINT [ "/entrypoint.sh" ]
-CMD [ "/usr/sbin/sshd", "-D" ]
-# CMD ls -la /etc/ssh
+CMD [ "/usr/sbin/sshd", "-D", "-e" ]
