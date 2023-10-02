@@ -1,7 +1,10 @@
 #!/usr/bin/env bash
 set -e
 
-chown --recursive sftp /media/sftp
+if [[ -n "$FILE_PERMISSIONS" ]]; then
+    echo "Set file permissions to \"${FILE_PERMISSIONS}\"."
+    chmod --recursive "$FILE_PERMISSIONS" /media/sftp
+fi
 
 echo "The sftp share can be mounted with sshfs (\"sshfs -o IdentityFile=IDENTITY sftp@IP_ADDRESS:/media/sftp /media/TARGET\")"
 echo "Authorized public keys:"

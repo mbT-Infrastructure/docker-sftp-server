@@ -5,10 +5,12 @@ This Docker image contains a simple ssh server which only allows sftp for the us
 
 ## Environment variables
 
-- `HOST_KEY`
-    - Host key to use for the ssh server.
 - `AUTHORIZED_PUBLIC_KEYS`
     - Public keys with access to the ssh server. For example `ssh-rsa AAAAB3Nz... user@example.madebytimo.de`.
+- `FILE_PERMISSIONS`
+    - If not empty the given file permissions are set recursively at startup, default `777`.
+- `HOST_KEY`
+    - Host key to use for the ssh server.
 
 
 ## Volumes

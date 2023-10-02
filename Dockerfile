@@ -13,6 +13,7 @@ COPY sshd_config /etc/ssh/
 RUN mkdir --parents /media/sftp
 
 ENV AUTHORIZED_PUBLIC_KEYS=""
+ENV FILE_PERMISSIONS=777
 ENV HOST_KEY=""
 
 COPY entrypoint.sh /entrypoint.sh
