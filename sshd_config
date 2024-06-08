@@ -7,10 +7,10 @@ UsePAM no
 
 # Connection
 ForceCommand internal-sftp
-HostKey /app/sftp/host_key
+HostKey /media/ssh/host_key
 Port 22
 Subsystem sftp internal-sftp
 
 # User configuration
 Match User sftp
-    AuthorizedKeysFile /app/sftp/authorized_keys
+    AuthorizedKeysFile /media/ssh/authorized_keys
