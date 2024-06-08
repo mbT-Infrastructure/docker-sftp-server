@@ -1,5 +1,3 @@
-version: "3.8"
-
 services:
 
     sftp-server:
@@ -7,10 +5,9 @@ services:
         build: .
         environment:
             - AUTHORIZED_PUBLIC_KEYS=
-            - |
-                HOST_KEY=-----BEGIN OPENSSH PRIVATE KEY-----
-                ...
-                -----END OPENSSH PRIVATE KEY-----
-
+            - HOST_KEY=
+        volumes:
+            - ./data-local/ssh-key.pub:/media/ssh/authorized_keys:ro
+            - ./data-local/ssh-key:/media/ssh/host_key:ro
         ports:
-            - "8022:22"
+            - "127.0.0.1:8022:22"
