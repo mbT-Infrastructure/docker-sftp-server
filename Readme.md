@@ -26,7 +26,9 @@ ports and volumes from that image.
 ## Volumes
 
 -   `/media/sftp`
-    -   Contains all data of the sftp share.
+    -   Chroot directory for sftp. Has to be writeable only by root.
+-   `/media/sftp/data`
+    -   Data directory of the sftp share. Writeable by the sftp user.
 -   `/media/ssh/authorized_keys`
     -   Additional public keys with access to the ssh server.
 -   `/media/ssh/host_key`

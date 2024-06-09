@@ -6,6 +6,7 @@ PermitRootLogin no
 UsePAM no
 
 # Connection
+ChrootDirectory /media/sftp
 ForceCommand internal-sftp
 HostKey /media/ssh/host_key
 Port 22

@@ -3,13 +3,14 @@ set -e
 
 mkdir --parents /media/ssh
 
+chown sftp /media/sftp/data
 if [[ -n "$FILE_PERMISSIONS" ]]; then
     echo "Set file permissions to \"${FILE_PERMISSIONS}\"."
-    chmod --recursive "$FILE_PERMISSIONS" /media/sftp
+    chmod --recursive "$FILE_PERMISSIONS" /media/sftp/data
 fi
 
 echo "The sftp share can be mounted with sshfs" \
-    "(\"sshfs -o IdentityFile=IDENTITY sftp@IP_ADDRESS:/media/sftp /media/TARGET\")"
+    "(\"sshfs sftp@###HOST###:/data /media/###TARGET###\")"
 if [[ -n "$AUTHORIZED_PUBLIC_KEYS" ]]; then
     echo "$AUTHORIZED_PUBLIC_KEYS" > /media/ssh/authorized_keys
     ls -la /media/ssh/authorized_keys
