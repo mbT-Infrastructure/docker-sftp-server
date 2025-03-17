@@ -1,5 +1,6 @@
 # Authentication
 AllowUsers sftp
+AuthorizedKeysFile /media/ssh/authorized_keys
 ChallengeResponseAuthentication no
 PasswordAuthentication no
 PermitRootLogin no
@@ -7,11 +8,7 @@ UsePAM no
 
 # Connection
 ChrootDirectory /media/sftp
-ForceCommand internal-sftp
+ForceCommand force-command.sh
 HostKey /media/ssh/host_key
 Port 22
 Subsystem sftp internal-sftp
-
-# User configuration
-Match User sftp
-    AuthorizedKeysFile /media/ssh/authorized_keys
