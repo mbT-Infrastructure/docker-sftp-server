@@ -6,7 +6,8 @@ RUN install-autonomous.sh install SSHServer \
 
 WORKDIR /root/builder/chroot
 
-RUN for COMMAND in "$SHELL" "$(which env)" "$(which rsync)" /usr/lib/openssh/sftp-server; do \
+RUN for COMMAND in "$SHELL" "$(which env)" "$(which ls)" "$(which rsync)" \
+            /usr/lib/openssh/sftp-server; do \
         cp --parents  "$COMMAND" . \
         && ldd "$COMMAND" \
             | sed --silent 's|^[^/]*\(/\S*\)\s.*$|\1|p' \

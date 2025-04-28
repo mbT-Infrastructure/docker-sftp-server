@@ -9,7 +9,7 @@ if [[ -n "$FILE_PERMISSIONS" ]]; then
     chmod --recursive "$FILE_PERMISSIONS" /media/sftp/data
 fi
 
-echo "The sftp share can be mounted with sshfs" \
+echo "The sftp share can be used with scp, rsync or mounted with sshfs" \
     "(\"sshfs sftp@###HOST###:/data /media/###TARGET###\")"
 if [[ -n "$AUTHORIZED_PUBLIC_KEYS" ]]; then
     echo "$AUTHORIZED_PUBLIC_KEYS" > /media/ssh/authorized_keys

@@ -1,7 +1,7 @@
 # sftp-server image
 
-This image starts a ssh server which only allows sftp connections. The authentication is key-based
-only.
+This image starts a ssh server which only allows sftp and rsync connections. The authentication is
+key-based only.
 
 ## Installation
 
