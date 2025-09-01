@@ -44,3 +44,6 @@ COPY files/entrypoint.sh /usr/local/bin/entrypoint.sh
 
 ENTRYPOINT [ "entrypoint.sh" ]
 CMD [ "/usr/sbin/sshd", "-D", "-e" ]
+
+LABEL org.opencontainers.image.licenses="MIT"
+LABEL org.opencontainers.image.source="https://github.com/mbt-infrastructure/docker-sftp-server"

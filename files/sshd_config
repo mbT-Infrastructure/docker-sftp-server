@@ -2,13 +2,18 @@
 AllowUsers sftp
 AuthorizedKeysFile /media/ssh/authorized_keys
 ChallengeResponseAuthentication no
+HostKey /media/ssh/host_key
 PasswordAuthentication no
 PermitRootLogin no
 UsePAM no
 
 # Connection
+AllowStreamLocalForwarding no
+AllowTcpForwarding no
 ChrootDirectory /media/sftp
 ForceCommand force-command.sh
-HostKey /media/ssh/host_key
 Port 22
 Subsystem sftp internal-sftp
+
+# Other
+PidFile none
